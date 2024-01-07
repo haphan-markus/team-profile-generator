@@ -22,7 +22,7 @@ const writeToFile = (fileName, data) => {
 }
 
 const questions = [
-    "What is the team manager's role?",
+    "What is the team manager's name?",
     "What is the team manager's id?",
     "What is the team manager's email?",
     "What is the team manager's office number?",
@@ -48,22 +48,22 @@ const init = () => {
     .prompt ([
         {
             type: "Input",
-            name: "managerRole",
+            name: "name",
             message: questions[0]
         },
         {
             type: "Input",
-            name: "managerId",
+            name: "id",
             message: questions[1]
         },
         {
             type: "Input",
-            name: "managerEmail",
+            name: "email",
             message: questions[2]
         },
         {
             type: "Input",
-            name: "managerOfficeNumber",
+            name: "officeNumber",
             message: questions[3]
         },
         {
@@ -75,6 +75,9 @@ const init = () => {
         }
     ]).then((response) => {
         console.log(response);
+        // create an object here from class Manager
+        const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
+        console.log(manager);
     })
 }
 

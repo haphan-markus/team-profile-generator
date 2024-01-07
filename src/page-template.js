@@ -65,7 +65,7 @@ const generateTeam = team => {
 
     const html = [];
 
-    html.push(team
+    html.push(team // pass the variable "team" into this folder
         .filter(employee => employee.getRole() === "Manager")
         .map(manager => generateManager(manager))
     );
