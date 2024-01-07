@@ -164,7 +164,7 @@ const memberChoice = (choice, answer) => {
         initEngineer();
     } else if (choice === "Intern") {
         initIntern();
-    } else {return fs.writeFile(team.html, render(answer), (err) => {
+    } else {return fs.writeFile("./team.html", render(answer), (err) => {
         if (err)
             console.log(err);
         else console.log("Generating team.html file ...");
