@@ -68,7 +68,7 @@ const init = () => {
         },
         {
             type: "list",
-            name: "memberChoice",
+            name: "choice",
             default: "Use arrow keys",
             choices: ["Engineer", "Intern", "I don't want to add any more team members"],
             message: questions[4]
@@ -78,11 +78,9 @@ const init = () => {
         // create an object here from class Manager
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
         console.log(manager);
-        if (response.memberChoice === "Engineer") {
-            initEngineer();
-        } else if (response.memberChoice === "Intern") {
-            initIntern();
-        }
+        
+        // Call memberChoice function
+        memberChoice(response.choice);
     })
 }
 
@@ -111,14 +109,14 @@ const initEngineer = ( ) => {
         },
         {
             type: "list",
-            name: "memberChoice",
+            name: "choice",
             default: "Use arrow keys",
             choices: ["Engineer", "Intern", "I don't want to add any more team members"],
             message: questions[4]
         }
     ]).then((response) => {
         const engineer = new Engineer(response.name, response.id, response.email, response.gitHub);
-        
+        memberChoice(response.choice);
     })
 }
 
@@ -147,15 +145,25 @@ const initIntern = () => {
         },
         {
             type: "list",
-            name: "memberChoice",
+            name: "choice",
             default: "Use arrow keys",
             choices: ["Engineer", "Intern", "I don't want to add any more team members"],
             message: questions[4]
         }
     ]).then((response) => {
-
+        const intern = new Intern(response.name, response.id, response.email, response.school);
+        memberChoice(response.choice);
     })
 }
+
+const memberChoice = (choice) => {
+    if (choice === "Engineer") {
+        initEngineer();
+    } else if (choice === "Intern") {
+        initIntern;
+    } else {return };
+}
+
 init();
 
 
