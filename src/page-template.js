@@ -1,4 +1,9 @@
 // creates the team
+const employee = require("../lib/Employee");
+const manager = require("../lib/Manager");
+const engineer = require("../lib/Engineer");
+const intern = require("../lib/Intern");
+
 const generateTeam = team => {
 
     // creates the manager html

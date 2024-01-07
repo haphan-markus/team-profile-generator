@@ -40,7 +40,7 @@ const questionsIntern = [
     "What is your intern's name?",
     "What is your intern's id?",
     "What is your intern's email?",
-    "What is your intern's GitHub username?"
+    "What is your intern's school?"
 ]
 
 const init = () => {
@@ -67,13 +67,15 @@ const init = () => {
             message: questions[3]
         },
         {
-            type: "List",
+            type: "list",
             name: "memberChoice",
             default: "Use arrow keys",
-            message: questions[4],
-            choice: ["Engineer", "Intern", "I don't want to add any more team members"]
+            choices: ["Engineer", "Intern", "I don't want to add any more team members"],
+            message: questions[4]
         }
     ]).then((response) => {
         console.log(response);
     })
 }
+
+init();
