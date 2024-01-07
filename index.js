@@ -73,9 +73,7 @@ const init = () => {
             message: questions[4],
             choice: ["Engineer", "Intern", "I don't want to add any more team members"]
         }
-    ]
-
-    ).then((response) => {
-
+    ]).then((response) => {
+        console.log(response);
     })
 }
