@@ -78,6 +78,11 @@ const init = () => {
         // create an object here from class Manager
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
         console.log(manager);
+        if (response.memberChoice === "Engineer") {
+            initEngineer();
+        } else if (response.memberChoice === "Intern") {
+            initIntern();
+        }
     })
 }
 
@@ -86,22 +91,22 @@ const initEngineer = ( ) => {
     .prompt ([
         {
             type: "Input",
-            name: "Role",
+            name: "name",
             message: questionsEngineer[0]
         },
         {
             type: "Input",
-            name: "Id",
+            name: "id",
             message: questionsEngineer[1]
         },
         {
             type: "Input",
-            name: "Email",
+            name: "email",
             message: questionsEngineer[2]
         },
         {
             type: "Input",
-            name: "GitHub",
+            name: "gitHub",
             message: questionsEngineer[3]
         },
         {
@@ -111,7 +116,10 @@ const initEngineer = ( ) => {
             choices: ["Engineer", "Intern", "I don't want to add any more team members"],
             message: questions[4]
         }
-    ]).then((response) => {})
+    ]).then((response) => {
+        const engineer = new Engineer(response.name, response.id, response.email, response.gitHub);
+        
+    })
 }
 
 const initIntern = () => {
@@ -119,22 +127,22 @@ const initIntern = () => {
     .prompt ([
         {
             type: "Input",
-            name: "Role",
+            name: "name",
             message: questionsIntern[0]
         },
         {
             type: "Input",
-            name: "Id",
+            name: "id",
             message: questionsIntern[1]
         },
         {
             type: "Input",
-            name: "Email",
+            name: "email",
             message: questionsIntern[2]
         },
         {
             type: "Input",
-            name: "GitHub",
+            name: "school",
             message: questionsIntern[3]
         },
         {
