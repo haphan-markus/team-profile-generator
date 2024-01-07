@@ -10,17 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
-
-// const writeToFile = (fileName, data) => {
-//     fs.writeFile(fileName, render(data), (err) => {
-//         if(err) {
-//             console.log(err);
-//         }
-//     })
-// }
-
 const answer = []; // Array to contain the input from all user
 
 const questions = [
@@ -84,7 +74,7 @@ const init = () => {
         answer.push(manager);
         
         // Call memberChoice function
-        memberChoice(response.choice);
+        memberChoice(response.choice, answer);
     })
 }
 
@@ -124,7 +114,7 @@ const initEngineer = ( ) => {
         // Add response into "answer" array
         answer.push(engineer);
         
-        memberChoice(response.choice);
+        memberChoice(response.choice, answer);
     })
 }
 
@@ -165,24 +155,30 @@ const initIntern = () => {
         answer.push(intern)
 
         // Call memberChoice function
-        memberChoice(response.choice);
+        memberChoice(response.choice, answer);
     })
 }
 
-const memberChoice = (choice) => {
+const memberChoice = (choice, answer) => {
     if (choice === "Engineer") {
         initEngineer();
     } else if (choice === "Intern") {
-        initIntern;
-    } else {return };
+        initIntern();
+    } else {return fs.writeFile(team.html, render(answer), (err) => {
+        if (err)
+            console.log(err);
+        else console.log("Generating team.html file ...");
+    })
+    };
 }
 
-init();
 
-
-
-// if ( ) {
-//     // choice equal to Engineer, answer the questionsEngineer and then prompt to the final question again
-//     // choice equal to Intern, answer the questionsIntern and then prompt to the final question again
-
+// const writeToFile = (fileName, data) => {
+//     fs.writeFile(fileName, render(data), (err) => {
+//         if(err) {
+//             console.log(err);
+//         }
+//     })
 // }
+
+init();
