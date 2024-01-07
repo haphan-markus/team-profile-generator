@@ -13,13 +13,15 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-const writeToFile = (fileName, data) => {
-    fs.writeFile(fileName, render(data), (err) => {
-        if(err) {
-            console.log(err);
-        }
-    })
-}
+// const writeToFile = (fileName, data) => {
+//     fs.writeFile(fileName, render(data), (err) => {
+//         if(err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+const answer = []; // Array to contain the input from all user
 
 const questions = [
     "What is the team manager's name?",
@@ -74,10 +76,12 @@ const init = () => {
             message: questions[4]
         }
     ]).then((response) => {
-        console.log(response);
-        // create an object here from class Manager
+        // Create an object here from class Manager
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
         console.log(manager);
+        
+        // Add response into "answer" array
+        answer.push(manager);
         
         // Call memberChoice function
         memberChoice(response.choice);
@@ -116,6 +120,10 @@ const initEngineer = ( ) => {
         }
     ]).then((response) => {
         const engineer = new Engineer(response.name, response.id, response.email, response.gitHub);
+        
+        // Add response into "answer" array
+        answer.push(engineer);
+        
         memberChoice(response.choice);
     })
 }
@@ -152,6 +160,11 @@ const initIntern = () => {
         }
     ]).then((response) => {
         const intern = new Intern(response.name, response.id, response.email, response.school);
+
+        // Add response into "answer" array
+        answer.push(intern)
+
+        // Call memberChoice function
         memberChoice(response.choice);
     })
 }
