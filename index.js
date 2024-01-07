@@ -78,4 +78,79 @@ const init = () => {
     })
 }
 
+const initEngineer = ( ) => {
+    inquirer
+    .prompt ([
+        {
+            type: "Input",
+            name: "Role",
+            message: questionsEngineer[0]
+        },
+        {
+            type: "Input",
+            name: "Id",
+            message: questionsEngineer[1]
+        },
+        {
+            type: "Input",
+            name: "Email",
+            message: questionsEngineer[2]
+        },
+        {
+            type: "Input",
+            name: "GitHub",
+            message: questionsEngineer[3]
+        },
+        {
+            type: "list",
+            name: "memberChoice",
+            default: "Use arrow keys",
+            choices: ["Engineer", "Intern", "I don't want to add any more team members"],
+            message: questions[4]
+        }
+    ]).then((response) => {})
+}
+
+const initIntern = () => {
+    inquirer
+    .prompt ([
+        {
+            type: "Input",
+            name: "Role",
+            message: questionsIntern[0]
+        },
+        {
+            type: "Input",
+            name: "Id",
+            message: questionsIntern[1]
+        },
+        {
+            type: "Input",
+            name: "Email",
+            message: questionsIntern[2]
+        },
+        {
+            type: "Input",
+            name: "GitHub",
+            message: questionsIntern[3]
+        },
+        {
+            type: "list",
+            name: "memberChoice",
+            default: "Use arrow keys",
+            choices: ["Engineer", "Intern", "I don't want to add any more team members"],
+            message: questions[4]
+        }
+    ]).then((response) => {
+
+    })
+}
 init();
+
+
+
+// if ( ) {
+//     // choice equal to Engineer, answer the questionsEngineer and then prompt to the final question again
+//     // choice equal to Intern, answer the questionsIntern and then prompt to the final question again
+
+// }
