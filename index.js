@@ -13,6 +13,14 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, render(data), (err) => {
+        if(err) {
+            console.log(err);
+        }
+    })
+}
+
 const questions = [
     "What is the team manager's role?",
     "What is the team manager's id?",
@@ -67,5 +75,7 @@ const init = () => {
         }
     ]
 
-    )
+    ).then((response) => {
+
+    })
 }
