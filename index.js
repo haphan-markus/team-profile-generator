@@ -68,7 +68,6 @@ const init = () => {
     ]).then((response) => {
         // Create an object here from class Manager
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
-        console.log(manager);
         
         // Add response into "answer" array
         answer.push(manager);
