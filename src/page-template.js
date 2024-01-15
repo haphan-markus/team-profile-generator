@@ -9,7 +9,7 @@ const generateTeam = team => {
     // creates the manager html
     const generateManager = manager => {
         return `
-        <div class="card employee-card" style="border-radius: 0; margin: 4%; box-shadow: 20px 20px 50px #888888;">
+        <div class="card employee-card" style="border-radius: 0; width: 20%; margin: 4%; box-shadow: 20px 20px 50px #888888;">
             <div class="card-header" style="background-color: #22BABB; border-radius: 0">
                 <h2 class="card-title">${manager.getName()}</h2>
                 <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
@@ -28,7 +28,7 @@ const generateTeam = team => {
     // creates the html for engineers
     const generateEngineer = engineer => {
         return `
-        <div class="card employee-card" style="border-radius: 0; margin: 4%; box-shadow: 20px 20px 50px #888888;">
+        <div class="card employee-card" style="border-radius: 0; width: 20%; margin: 4%; box-shadow: 20px 20px 50px #888888;">
             <div class="card-header" style="background-color: #22BABB; border-radius: 0">
                 <h2 class="card-title">${engineer.getName()}</h2>
                 <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
@@ -47,7 +47,7 @@ const generateTeam = team => {
     // creates the html for interns
     const generateIntern = intern => {
         return `
-        <div class="card employee-card" style="border-radius: 0; margin: 4%; box-shadow: 20px 20px 50px #888888;">
+        <div class="card employee-card" style="border-radius: 0; width: 20%; margin: 4%; box-shadow: 20px 20px 50px #888888;">
             <div class="card-header" style="background-color: #22BABB; border-radius: 0">
                 <h2 class="card-title">${intern.getName()}</h2>
                 <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
