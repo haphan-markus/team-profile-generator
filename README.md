@@ -28,11 +28,9 @@ User should know how to navigate or use the command prompt or terminal.
 
 ## Visual
 
-This section provides a walkthrough video on how the application works.
+A sample website "team.html" generated using the application is also attached in the repo. An image is attached to show the example of how the application works.
 
-[Video]()
-
-A sample website "team.html" generated using the application is also attached in the repo.
+![Alt text](./assets/image.png)
 
 ## Licence
 
